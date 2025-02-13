@@ -1,7 +1,4 @@
-
-<div>
-  <app-content-list-item></app-content-list-item>
-  <app-content-list-item></app-content-list-item>
-  <app-content-list-item></app-content-list-item>
-  <app-content-list-item></app-content-list-item>
-</div>
+<app-content-list-item
+  *ngFor="let product of products"
+  [product]="product">
+</app-content-list-item>
