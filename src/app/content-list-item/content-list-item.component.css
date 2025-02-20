@@ -1,0 +1,21 @@
+.even-item {
+  background-color: #3a3535;
+}
+
+.odd-item {
+  background-color: teal;
+}
+
+.content-list-item {
+  border: 2px solid black;
+  margin: 10px 0;
+  background-color: #af6666;
+}
+
+.content-list-item h2 {
+  color: #333;
+}
+
+.content-list-item p {
+  margin: 5px 0;
+}
