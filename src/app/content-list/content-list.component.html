@@ -1,8 +1,17 @@
 <div>
   <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Color Available</th>
+    </tr>
+    </thead>
     <tbody>
-    <tr *ngFor = "let product of productList">
-
+    <tr *ngFor = "let product of productList; let i = index"
+        [ngClass]="{ 'even': i % 2 === 0, 'odd': i % 2 !== 0 }">
       <td>{{ product.id }}</td>
       <td>{{ product.name }}</td>
       <td>{{ product.price }}</td>

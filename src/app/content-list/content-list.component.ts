@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {NgForOf} from '@angular/common';
-import {ContentListItemComponent} from '../content-list-item/content-list-item.component';
+import {NgClass, NgForOf} from '@angular/common';
 import {Product} from '../Shared/models/product';
 
 @Component({
@@ -8,7 +7,8 @@ import {Product} from '../Shared/models/product';
   standalone: true,
   imports: [
     NgForOf,
-    ContentListItemComponent,
+    NgForOf,
+    NgClass
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
