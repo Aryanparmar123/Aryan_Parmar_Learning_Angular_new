@@ -1,1 +1,14 @@
-<p>content-list works!</p>
+<div>
+  <table>
+    <tbody>
+    <tr *ngFor = "let product of productList">
+
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.color ? 'Yes' : 'No' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
