@@ -3,5 +3,5 @@ export interface Product {
   name: string;
   price: number;
   category: string;
-  color: string
+  color?: boolean
 }
