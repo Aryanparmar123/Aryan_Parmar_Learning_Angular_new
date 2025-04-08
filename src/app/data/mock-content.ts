@@ -1,7 +1,7 @@
 
 import { Product } from '../Shared/models/product';
 
-export const mockProductList: Product[] = [
+export const ProductList: Product[] = [
   {
     id: 1,
     name: "Desktop",
