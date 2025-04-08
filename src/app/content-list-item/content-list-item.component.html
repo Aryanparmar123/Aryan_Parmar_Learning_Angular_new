@@ -1,8 +1,10 @@
 <div *ngIf = "product">
+  <div  [ngClass]="{ 'even': product.id % 2 === 0, 'odd': product.id % 2 !== 0 }" style="border: 2px solid black; padding: 10px;">
   <h2>Products List</h2>
   <p><strong>ID:</strong> {{product.id}}</p>
   <p><strong>Name:</strong> {{product.name}}</p>
   <p>Price: {{product.price}}</p>
   <p>Category: {{product.category}}</p>
   <p>Color: {{product.color ? 'Yes': 'No'}}</p>
+  </div>
 </div>

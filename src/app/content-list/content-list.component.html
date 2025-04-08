@@ -1,4 +1,12 @@
 <div>
+  <h2>Electronics List</h2>
+  <div *ngFor="let product of productList">
+   <app-content-list-item [product]="product" ></app-content-list-item>
+  </div>
+</div>
+
+
+<div>
   <table>
     <thead>
     <tr>
@@ -18,6 +26,8 @@
       <td>{{ product.price }}</td>
       <td>{{ product.category }}</td>
       <td>{{ product.color ? 'Yes' : 'No' }}</td>
+
+
     </tr>
     </tbody>
   </table>

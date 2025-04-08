@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NgClass, NgForOf} from '@angular/common';
 import {Product} from '../Shared/models/product';
 import {ElectronicItemsService} from '../services/electronic-items.service';
+import {ContentListItemComponent} from '../content-list-item/content-list-item.component';
 
 @Component({
   selector: 'app-content-list',
@@ -9,7 +10,8 @@ import {ElectronicItemsService} from '../services/electronic-items.service';
   imports: [
     NgForOf,
     NgForOf,
-    NgClass
+    NgClass,
+    ContentListItemComponent
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
