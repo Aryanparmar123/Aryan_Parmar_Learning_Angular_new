@@ -3,10 +3,11 @@ import {ContentListComponent} from './content-list/content-list.component';
 import {ContentListItemComponent} from './content-list-item/content-list-item.component';
 import {ElectronicItemsService} from './services/electronic-items.service';
 import {Product} from './Shared/models/product';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ContentListComponent, ContentListItemComponent],
+  imports: [ContentListComponent, ContentListItemComponent, RouterLink, RouterOutlet],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrl: './app.component.scss'
