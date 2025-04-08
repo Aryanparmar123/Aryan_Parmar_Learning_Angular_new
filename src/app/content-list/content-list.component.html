@@ -2,6 +2,8 @@
   <h2>Electronics List</h2>
   <div *ngFor="let product of productList">
    <app-content-list-item [product]="product" ></app-content-list-item>
+    <button (click)="onEdit(product.id)">Edit</button>
+    <button (click)="onDelete(product.id)">Delete</button>
   </div>
 </div>
 

@@ -1,11 +1,40 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Product} from '../Shared/models/product';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ElectronicItemsService} from '../services/electronic-items.service';
 
 @Component({
   selector: 'app-modify-list-item',
-  imports: [],
+  imports: [
+    ReactiveFormsModule
+  ],
   templateUrl: './modify-list-item.component.html',
+  standalone: true,
   styleUrl: './modify-list-item.component.css'
 })
-export class ModifyListItemComponent {
+export class ModifyListItemComponent implements OnInit {
+  productForm: FormGroup;
+  product: Product | undefined;
+
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private electronicItemsService: ElectronicItemsService,
+    private router: Router
+  ) {
+    // Reactive form with validation
+    this.productForm = this.fb.group({
+      id: ['', Validators.required],
+      name: ['', Validators.required],
+      price: ['', [Validators.required, Validators.min(0)]],
+      category: ['', Validators.required],
+      color: [false],
+      imageUrl: ['']
+    });
+  }
+
+  ngOnInit(): void {
+  }
 
 }
