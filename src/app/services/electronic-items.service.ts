@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import { ProductList} from '../data/mock-content';
+import {ProductList} from '../data/mock-content';
 import {Product} from '../Shared/models/product';
 
 @Injectable({
@@ -22,9 +22,11 @@ private products:Product[]= ProductList;
   }
 
   addElectronics(newProduct: Product): Observable<Product[]> {
+    newProduct.id = this.products.length > 0 ? Math.max(...this.products.map(product => product.id)) + 1 : 1;
     this.products.push(newProduct);
     return of(this.products);
   }
+
 
   updateElectronics(updatedProduct: Product): Observable<Product[]> {
     const index = this.products.findIndex(product => product.id === updatedProduct.id);
@@ -34,13 +36,9 @@ private products:Product[]= ProductList;
     return of(this.products);
   }
 
-  deleteElectronics(productId: number): Observable<Product | undefined> {
-    const index = this.products.findIndex(product => product.id === productId);
-    if (index !== -1) {
-      const removedProduct = this.products.splice(index, 1)[0];
-      return of(removedProduct);
-    }
-    return of(undefined);
+  deleteElectronics(productId: number): Observable<Product[]> {
+    this.products = this.products.filter(product => product.id !== productId);
+    return of(this.products);
   }
 }
 

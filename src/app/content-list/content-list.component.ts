@@ -31,7 +31,7 @@ export class ContentListComponent {
     });
   }
   onEdit(id: number): void {
-    this.router.navigate(['/modify-product', id]);
+    this.router.navigate(['/modify-list-item', id]);
   }
 
   onDelete(id: number): void {

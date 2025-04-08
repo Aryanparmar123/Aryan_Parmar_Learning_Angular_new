@@ -35,6 +35,36 @@ export class ModifyListItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.electronicItemsService.getElectronicsById(+id).subscribe((product) => {
+        if (product) {
+          this.product = product;
+          this.productForm.patchValue(product);
+        }
+      });
+    }
   }
 
+  onSubmit(): void {
+    const product: Product = this.productForm.value;
+
+    if (product.id) {
+
+      this.electronicItemsService.updateElectronics(product).subscribe(() => {
+        this.router.navigate(['/']);
+      });
+    } else {
+
+      this.electronicItemsService.addElectronics(product).subscribe(() => {
+        this.router.navigate(['/']);
+      });
+    }
+  }
+
+
+
+  navigateToProductList(): void {
+    this.router.navigate(['/']);
+  }
 }

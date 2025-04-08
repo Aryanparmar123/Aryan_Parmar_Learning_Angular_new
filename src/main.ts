@@ -10,6 +10,7 @@ import {PageNotFoundComponent} from './app/page-not-found/page-not-found.compone
 const routes = [
   { path: '', component: ContentListComponent },
   { path: 'modify-list-item', component: ModifyListItemComponent },
+  {path: 'modify-list-item/:id', component: ModifyListItemComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
