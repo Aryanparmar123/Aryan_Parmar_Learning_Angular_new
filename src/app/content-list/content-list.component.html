@@ -2,8 +2,8 @@
   <h2>Electronics List</h2>
   <div *ngFor="let product of productList">
    <app-content-list-item [product]="product" ></app-content-list-item>
-    <button (click)="onEdit(product.id)">Edit</button>
-    <button (click)="onDelete(product.id)">Delete</button>
+    <button [appHoverHighlight]="'lightblue'" (click)="onEdit(product.id)" >Edit</button>
+    <button [appHoverHighlight]="'lightblue'" (click)="onDelete(product.id)">Delete</button>
   </div>
 </div>
 
@@ -24,10 +24,10 @@
     <tr *ngFor = "let product of productList; let i = index"
         [ngClass]="{ 'even': i % 2 === 0, 'odd': i % 2 !== 0 }">
       <td>{{ product.id }}</td>
-      <td>{{ product.name | uppercase}}</td>
+      <td [appHoverHighlight]="'yellow'">{{ product.name | uppercase}}</td>
       <td>{{ product.price | currency: 'CAD': "symbol-narrow"}}</td>
       <td>{{ product.category| titlecase }}</td>
-      <td>{{ product.color ? 'Yes' : 'No' }}</td>
+      <td [appHoverHighlight]="'lightblue'" >{{ product.color ? 'Yes' : 'No' }}</td>
 
 
     </tr>

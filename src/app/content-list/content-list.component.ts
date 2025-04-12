@@ -4,6 +4,7 @@ import {Product} from '../Shared/models/product';
 import {ElectronicItemsService} from '../services/electronic-items.service';
 import {ContentListItemComponent} from '../content-list-item/content-list-item.component';
 import {Router} from '@angular/router';
+import {HoverHighlightDirective} from '../directives/hover-highlight.directive';
 
 @Component({
   selector: 'app-content-list',
@@ -15,7 +16,8 @@ import {Router} from '@angular/router';
     ContentListItemComponent,
     CurrencyPipe,
     TitleCasePipe,
-    UpperCasePipe
+    UpperCasePipe,
+    HoverHighlightDirective
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
