@@ -24,9 +24,9 @@
     <tr *ngFor = "let product of productList; let i = index"
         [ngClass]="{ 'even': i % 2 === 0, 'odd': i % 2 !== 0 }">
       <td>{{ product.id }}</td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.category }}</td>
+      <td>{{ product.name | uppercase}}</td>
+      <td>{{ product.price | currency: 'CAD': "symbol-narrow"}}</td>
+      <td>{{ product.category| titlecase }}</td>
       <td>{{ product.color ? 'Yes' : 'No' }}</td>
 
 

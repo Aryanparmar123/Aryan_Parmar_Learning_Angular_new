@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgClass, NgForOf} from '@angular/common';
+import {CurrencyPipe, NgClass, NgForOf, TitleCasePipe, UpperCasePipe} from '@angular/common';
 import {Product} from '../Shared/models/product';
 import {ElectronicItemsService} from '../services/electronic-items.service';
 import {ContentListItemComponent} from '../content-list-item/content-list-item.component';
@@ -12,7 +12,10 @@ import {Router} from '@angular/router';
     NgForOf,
     NgForOf,
     NgClass,
-    ContentListItemComponent
+    ContentListItemComponent,
+    CurrencyPipe,
+    TitleCasePipe,
+    UpperCasePipe
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'

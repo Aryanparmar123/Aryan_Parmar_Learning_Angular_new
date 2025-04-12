@@ -1,12 +1,15 @@
 import {Component, Input} from '@angular/core';
 import {Product} from "../Shared/models/product";
-import {NgClass, NgIf} from "@angular/common";
+import {CurrencyPipe, NgClass, NgIf, TitleCasePipe, UpperCasePipe} from "@angular/common";
 
 @Component({
     selector: 'app-content-list-item',
   imports: [
     NgIf,
-    NgClass
+    NgClass,
+    CurrencyPipe,
+    UpperCasePipe,
+    TitleCasePipe
   ],
     templateUrl: './content-list-item.component.html',
     standalone: true,
