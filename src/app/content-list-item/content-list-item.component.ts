@@ -18,6 +18,7 @@ import {ProductLabelPipe} from '../pipes/product-label.pipe';
     standalone: true,
     styleUrl: './content-list-item.component.css'
 })
+// assignment 9 started
 export class ContentListItemComponent {
 
     @Input() product?: Product;
