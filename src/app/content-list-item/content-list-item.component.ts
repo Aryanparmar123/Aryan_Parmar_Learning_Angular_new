@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Product} from "../Shared/models/product";
 import {CurrencyPipe, NgClass, NgIf, TitleCasePipe, UpperCasePipe} from "@angular/common";
+import {ProductLabelPipe} from '../pipes/product-label.pipe';
 
 @Component({
     selector: 'app-content-list-item',
@@ -9,7 +10,9 @@ import {CurrencyPipe, NgClass, NgIf, TitleCasePipe, UpperCasePipe} from "@angula
     NgClass,
     CurrencyPipe,
     UpperCasePipe,
-    TitleCasePipe
+    TitleCasePipe,
+    ProductLabelPipe
+
   ],
     templateUrl: './content-list-item.component.html',
     standalone: true,

@@ -3,6 +3,7 @@
   <div  [ngClass]="{ 'even': product.id % 2 === 0, 'odd': product.id % 2 !== 0 }" style="border: 2px solid black; padding: 10px;">
   <h2>Products List</h2>
   <p><strong>ID:</strong> {{product.id}}</p>
+    <div><strong>Label:</strong> {{ product | productLabel }}</div>
   <p><strong>Name:</strong> {{product.name | uppercase}}</p>
   <p>Price: {{product.price | currency: 'CAD': "symbol-narrow"}}</p>
   <p>Category: {{product.category | titlecase }}</p>
