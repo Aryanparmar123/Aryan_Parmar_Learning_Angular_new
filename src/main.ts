@@ -9,9 +9,26 @@ import {PageNotFoundComponent} from './app/page-not-found/page-not-found.compone
 
 const routes = [
   { path: '', component: ContentListComponent },
-  { path: 'modify-list-item', component: ModifyListItemComponent },
-  {path: 'modify-list-item/:id', component: ModifyListItemComponent},
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: 'modify-list-item',
+    loadComponent: () =>
+      import('./app/modify-list-item/modify-list-item.component')
+        .then(m => m.ModifyListItemComponent)
+  },
+  {
+    path: 'modify-list-item/:id',
+    loadComponent: () =>
+      import('./app/modify-list-item/modify-list-item.component')
+        .then(m => m.ModifyListItemComponent)
+  },
+
+
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./app/page-not-found/page-not-found.component')
+        .then(m => m.PageNotFoundComponent)
+  }
 ];
 
 
