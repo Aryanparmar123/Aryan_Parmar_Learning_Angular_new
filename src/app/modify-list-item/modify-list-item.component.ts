@@ -3,11 +3,13 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {Product} from '../Shared/models/product';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ElectronicItemsService} from '../services/electronic-items.service';
+import {HighlightOnFocusDirective} from '../directives/highlight-on-focus.directive';
 
 @Component({
   selector: 'app-modify-list-item',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HighlightOnFocusDirective
   ],
   templateUrl: './modify-list-item.component.html',
   standalone: true,

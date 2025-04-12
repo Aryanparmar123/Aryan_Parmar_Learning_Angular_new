@@ -1,7 +1,7 @@
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="id">ID</label>
-    <input type="number" id="id" formControlName="id" />
+    <input type="number" id="id" formControlName="id"   [appHighlightOnFocus]="'pink'"/>
   </div>
 
   <div class="form-group">
@@ -11,7 +11,7 @@
 
   <div class="form-group">
     <label for="price">Price</label>
-    <input type="number" id="price" formControlName="price" />
+    <input type="number" id="price" formControlName="price"  [appHighlightOnFocus]="'dodgerblue'" />
   </div>
 
   <div class="form-group">
@@ -21,12 +21,12 @@
 
   <div class="form-group">
     <label for="color">Color Available</label>
-    <input type="checkbox" id="color" formControlName="color" />
+    <input type="checkbox" id="color" formControlName="color"  [appHighlightOnFocus]="'orange'" />
   </div>
 
   <div class="form-group">
     <label for="imageUrl">Image URL</label>
-    <input type="text" id="imageUrl" formControlName="imageUrl" />
+    <input type="text" id="imageUrl" formControlName="imageUrl"  [appHighlightOnFocus]="'orange'"/>
   </div>
 
   <button type="submit">Submit</button>
