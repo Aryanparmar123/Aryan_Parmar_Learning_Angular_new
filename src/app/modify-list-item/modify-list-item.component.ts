@@ -9,6 +9,7 @@ import {MatDivider} from '@angular/material/list';
 import {MatFormField, MatInput} from '@angular/material/input';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {MatButton} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-modify-list-item',
@@ -21,7 +22,8 @@ import {MatButton} from '@angular/material/button';
     MatFormField,
     MatCheckbox,
     MatInput,
-    MatButton
+    MatButton,
+    MatTooltipModule
   ],
   templateUrl: './modify-list-item.component.html',
   standalone: true,

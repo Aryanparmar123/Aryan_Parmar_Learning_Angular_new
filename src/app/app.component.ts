@@ -4,10 +4,12 @@ import {ContentListItemComponent} from './content-list-item/content-list-item.co
 import {ElectronicItemsService} from './services/electronic-items.service';
 import {Product} from './Shared/models/product';
 import {RouterLink, RouterOutlet} from '@angular/router';
+import {MatToolbar} from '@angular/material/toolbar';
+import {MatAnchor} from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  imports: [ContentListComponent, ContentListItemComponent, RouterLink, RouterOutlet],
+  imports: [ContentListComponent, ContentListItemComponent, RouterLink, RouterOutlet, MatToolbar, MatAnchor],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrl: './app.component.scss'

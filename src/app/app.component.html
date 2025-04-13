@@ -13,15 +13,15 @@
 <!--  <p>Color: {{ product.color }}</p>-->
 <!--  <hr>-->
 <!--</div>-->
+<mat-toolbar color="primary">
+  <span>My App</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/">Home</a>
+  <a mat-button routerLink="/modify-list-item">Modify List Item</a>
+  <a mat-button routerLink="/random-compent">Random Component</a>
+  <a mat-button routerLink="/r">Something</a>
+</mat-toolbar>
 
-<nav>
-  <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/modify-list-item">Modify List Item</a></li>
-    <li><a routerLink="/random-compent">random component</a></li>
-    <li><a routerLink="/r">something</a></li>
-  </ul>
-</nav>
 <h1> {{title}}</h1>
 <app-content-list-item [product]="product" ></app-content-list-item>
 
