@@ -3,6 +3,9 @@ import {Product} from "../Shared/models/product";
 import {CurrencyPipe, NgClass, NgIf, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {ProductLabelPipe} from '../pipes/product-label.pipe';
 import {HoverHighlightDirective} from '../directives/hover-highlight.directive';
+import {MatChip} from '@angular/material/chips';
+import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle} from '@angular/material/card';
+import {MatDivider} from '@angular/material/list';
 
 @Component({
     selector: 'app-content-list-item',
@@ -13,7 +16,14 @@ import {HoverHighlightDirective} from '../directives/hover-highlight.directive';
     UpperCasePipe,
     TitleCasePipe,
     ProductLabelPipe,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    MatChip,
+    MatDivider,
+    MatCardContent,
+    MatCardSubtitle,
+    MatCard,
+    MatCardHeader
+
 
   ],
     templateUrl: './content-list-item.component.html',

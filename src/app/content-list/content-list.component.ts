@@ -5,6 +5,17 @@ import {ElectronicItemsService} from '../services/electronic-items.service';
 import {ContentListItemComponent} from '../content-list-item/content-list-item.component';
 import {Router} from '@angular/router';
 import {HoverHighlightDirective} from '../directives/hover-highlight.directive';
+import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef, MatHeaderRow,
+  MatHeaderRowDef, MatRow, MatRowDef, MatTable
+} from '@angular/material/table';
+import {MatDivider} from '@angular/material/list';
 
 @Component({
   selector: 'app-content-list',
@@ -17,7 +28,20 @@ import {HoverHighlightDirective} from '../directives/hover-highlight.directive';
     CurrencyPipe,
     TitleCasePipe,
     UpperCasePipe,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    MatCardModule,
+    MatButtonModule,
+    MatDivider,
+    MatColumnDef,
+    MatHeaderCell,
+    MatCell,
+    MatCellDef,
+    MatHeaderCellDef,
+    MatHeaderRowDef,
+    MatHeaderRow,
+    MatRow,
+    MatRowDef,
+    MatTable
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'

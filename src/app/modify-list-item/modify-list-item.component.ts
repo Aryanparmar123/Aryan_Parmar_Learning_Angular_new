@@ -4,12 +4,24 @@ import {Product} from '../Shared/models/product';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ElectronicItemsService} from '../services/electronic-items.service';
 import {HighlightOnFocusDirective} from '../directives/highlight-on-focus.directive';
+import {MatCard, MatCardTitle} from '@angular/material/card';
+import {MatDivider} from '@angular/material/list';
+import {MatFormField, MatInput} from '@angular/material/input';
+import {MatCheckbox} from '@angular/material/checkbox';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-modify-list-item',
   imports: [
     ReactiveFormsModule,
-    HighlightOnFocusDirective
+    HighlightOnFocusDirective,
+    MatCard,
+    MatCardTitle,
+    MatDivider,
+    MatFormField,
+    MatCheckbox,
+    MatInput,
+    MatButton
   ],
   templateUrl: './modify-list-item.component.html',
   standalone: true,

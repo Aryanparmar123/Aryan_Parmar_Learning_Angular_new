@@ -1,34 +1,46 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="id">ID</label>
-    <input type="number" id="id" formControlName="id"   [appHighlightOnFocus]="'pink'"/>
-  </div>
+<div class="form-wrapper">
+  <mat-card class="form-card mat-elevation-z8">
+    <mat-card-title>Modify Product</mat-card-title>
+    <mat-divider></mat-divider>
 
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" id="name" formControlName="name" />
-  </div>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
 
-  <div class="form-group">
-    <label for="price">Price</label>
-    <input type="number" id="price" formControlName="price"  [appHighlightOnFocus]="'dodgerblue'" />
-  </div>
+        <label>ID</label>
+        <mat-form-field appearance="fill" class="full-width">
+          <input matInput type="number" formControlName="id" [appHighlightOnFocus]="'pink'" />
+        </mat-form-field>
 
-  <div class="form-group">
-    <label for="category">Category</label>
-    <input type="text" id="category" formControlName="category" />
-  </div>
+        <label>Name</label>
+        <mat-form-field appearance="fill" class="full-width">
+          <input matInput type="text" formControlName="name" />
+        </mat-form-field>
 
-  <div class="form-group">
-    <label for="color">Color Available</label>
-    <input type="checkbox" id="color" formControlName="color"  [appHighlightOnFocus]="'orange'" />
-  </div>
+        <label>Price</label>
+        <mat-form-field appearance="fill" class="full-width">
+          <input matInput type="number" formControlName="price" [appHighlightOnFocus]="'dodgerblue'" />
+        </mat-form-field>
 
-  <div class="form-group">
-    <label for="imageUrl">Image URL</label>
-    <input type="text" id="imageUrl" formControlName="imageUrl"  [appHighlightOnFocus]="'orange'"/>
-  </div>
+        <label>Category</label>
+        <mat-form-field appearance="fill" class="full-width">
+          <input matInput type="text" formControlName="category" />
+        </mat-form-field>
 
-  <button type="submit">Submit</button>
-  <button type="button" (click)="navigateToProductList()">Back to List</button>
-</form>
+        <mat-checkbox formControlName="color" color="primary" [appHighlightOnFocus]="'orange'">
+          Color Available
+        </mat-checkbox>
+
+        <label>Image URL</label>
+        <mat-form-field appearance="fill" class="full-width">
+          <input matInput type="text" formControlName="imageUrl" [appHighlightOnFocus]="'orange'" />
+        </mat-form-field>
+
+      </div>
+
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-stroked-button color="accent" type="button" (click)="navigateToProductList()">Back to List</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

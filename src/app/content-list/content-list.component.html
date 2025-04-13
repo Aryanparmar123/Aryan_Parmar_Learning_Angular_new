@@ -1,36 +1,76 @@
-<div>
-  <h2>Electronics List</h2>
-  <div *ngFor="let product of productList">
-   <app-content-list-item [product]="product" ></app-content-list-item>
-    <button [appHoverHighlight]="'lightblue'" (click)="onEdit(product.id)" >Edit</button>
-    <button [appHoverHighlight]="'lightblue'" (click)="onDelete(product.id)">Delete</button>
+<mat-card class="mat-elevation-z8">
+  <mat-card-title>Electronics List</mat-card-title>
+  <mat-divider></mat-divider>
+
+  <div *ngFor="let product of productList" style="margin-bottom: 10px;">
+    <app-content-list-item [product]="product"></app-content-list-item>
+    <button
+      mat-stroked-button
+      color="primary"
+      [appHoverHighlight]="'lightblue'"
+      (click)="onEdit(product.id)">
+      Edit
+    </button>
+    <button
+      mat-stroked-button
+      color="warn"
+      [appHoverHighlight]="'lightblue'"
+      (click)="onDelete(product.id)">
+      Delete
+    </button>
   </div>
-</div>
+</mat-card>
 
+<br />
 
-<div>
-  <table>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Category</th>
-      <th>Color Available</th>
+<mat-card>
+  <mat-card-title>Product Table</mat-card-title>
+  <mat-divider></mat-divider>
+
+  <table mat-table [dataSource]="productList" class="mat-elevation-z8">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let product">{{ product.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let product" [appHoverHighlight]="'yellow'">
+        {{ product.name | uppercase }}
+      </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let product">
+        {{ product.price | currency: 'CAD': 'symbol-narrow' }}
+      </td>
+    </ng-container>
+
+    <!-- Category Column -->
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
+      <td mat-cell *matCellDef="let product">
+        {{ product.category | titlecase }}
+      </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef>Color Available</th>
+      <td mat-cell *matCellDef="let product" [appHoverHighlight]="'lightblue'">
+        {{ product.color ? 'Yes' : 'No' }}
+      </td>
+    </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="['id', 'name', 'price', 'category', 'color']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'price', 'category', 'color'];"
+        [ngClass]="{ 'even': productList.indexOf(row) % 2 === 0, 'odd': productList.indexOf(row) % 2 !== 0 }">
     </tr>
-    </thead>
-    <tbody>
-
-    <tr *ngFor = "let product of productList; let i = index"
-        [ngClass]="{ 'even': i % 2 === 0, 'odd': i % 2 !== 0 }">
-      <td>{{ product.id }}</td>
-      <td [appHoverHighlight]="'yellow'">{{ product.name | uppercase}}</td>
-      <td>{{ product.price | currency: 'CAD': "symbol-narrow"}}</td>
-      <td>{{ product.category| titlecase }}</td>
-      <td [appHoverHighlight]="'lightblue'" >{{ product.color ? 'Yes' : 'No' }}</td>
-
-
-    </tr>
-    </tbody>
   </table>
-</div>
+</mat-card>
